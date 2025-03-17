@@ -43,8 +43,11 @@ console.log("Incrementar en 1 unidad el valor de "+ numero1+" no lo hace mayor o
 }
 
 function eje4(){
-    var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K',
+    let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K',
         'E', 'T'];
+    let DNI
+    let DNIletra
+
 }
 function eje5(){
 }
