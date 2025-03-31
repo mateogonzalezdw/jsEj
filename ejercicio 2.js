@@ -60,7 +60,7 @@ DNIletra = letras[(DNI%23)]
 console.log(DNIletra)
 
 
-let letraC = prompt("Calcula la letra")
+var letraC = prompt("Calcula la letra")
 if (letraC=DNIletra)
 {
 console.log("El número de y la letra del DNI son correctos")
@@ -129,10 +129,9 @@ function Persona(nombre, edad, genero){
 }
 
 Persona.prototype.obtDetalle = function(){
-    console.log(this.nombre)
-    console.log(this.edad)
-    console.log(this.genero)
+    console.log(this.nombre + " tiene " + this.edad + " años" + " y es de género " + this.genero)
 }
+
 
 function Estudiante(nombre, edad, genero, curso,grupo){
     Persona.call(this, nombre, edad, genero)
@@ -143,22 +142,35 @@ function Estudiante(nombre, edad, genero, curso,grupo){
 Estudiante.prototype = Object.create(Persona.prototype)
 Estudiante.prototype.constructor = Estudiante
 
-function eje9(){    
-let p1 = new Persona("Persona1", 20, "Masculino");
-let e1 = new Estudiante("Estudiante1", 18, "Femenino", "1º", "A");
-console.log(p1.obtDetalle())
-console.log(e1.obtDetalle())
+Estudiante.prototype.registrar = function(){
+    console.log("Se registró en el curso " + this.curso + " grupo " + this.grupo)
 }
 
-let p3 = new persona("Profesor")
-persona.prototype.obtDetalle=function(nombre, edad, genero, asignatura, nivel){
-this.nombre = nombre
-this.edad= edad
-this.genero= genero
-this.asignatura = asignatura
-this.nivel = nivel
-p3.asignar()
+
+function Profesor(nombre, edad, genero, asignatura, nivel){
+    Persona.call(this, nombre, edad, genero)
+    this.asignatura = asignatura
+    this.nivel = nivel
+} 
+
+Profesor.prototype = Object.create(Persona.prototype)
+Profesor.prototype.constructor = Profesor
+
+Profesor.prototype.asignar = function(){
+    console.log("Le asignaron la asignatura " + this.asignatura + " en el nivel " + this.nivel)
 }
+
+function eje9(){    
+let p1 = new Persona("Persona1", 20, "Masculino");
+let e1 = new Estudiante("Estudiante1", 17, "Femenino", "1º", "A");
+let pr1 = new Profesor("Profesor1", 29, "Femenino", "Matemática", "3");
+console.log(p1.obtDetalle())
+console.log(e1.obtDetalle())
+console.log(e1.registrar())
+console.log(pr1.obtDetalle())
+console.log(pr1.asignar())
+}
+
 
 
 function eje10(){
@@ -168,8 +180,7 @@ for (i=36000;i--;i<0)
 let dado1 = Math.floor(Math.random()*6)+1
 let dado2 = Math.floor(Math.random()*6)+1
 let suma = dado1 + dado2
-let array10 = [0,0,0,0,0,0,0,0,0,0,0,0]
-console.log(suma)
+var array10 = [a210,a310,a410,a510,a610,a710,a810,a910,a1010,a1110,a1210]
 if(suma==2){
 a210++
 }
@@ -205,5 +216,7 @@ a1210++
 }
 
 }
+
+console.log(array10)
 
 }
