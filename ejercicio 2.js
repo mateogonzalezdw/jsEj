@@ -74,10 +74,12 @@ console.log("La letra que ha indicado no es correcta")
 
 function eje5(){
 let N = prompt("Ingresa un número")
-for(i=N; i--;i>0)
+let f = N
+for(i=0;i<N-1; i++)
 {
-console.log(N*(N-1))
+f = f*(N-1-i)
 }
+console.log("El factorial de " + N + " es " + f)
 }
 
 function eje6(){
@@ -180,7 +182,7 @@ for (i=36000;i--;i<0)
 let dado1 = Math.floor(Math.random()*6)+1
 let dado2 = Math.floor(Math.random()*6)+1
 let suma = dado1 + dado2
-var array10 = [a210,a310,a410,a510,a610,a710,a810,a910,a1010,a1110,a1210]
+var array10 = [0,0,a210,a310,a410,a510,a610,a710,a810,a910,a1010,a1110,a1210]
 if(suma==2){
 a210++
 }
@@ -216,7 +218,7 @@ a1210++
 }
 
 }
-
-console.log(array10)
-
+for (i=2;i<array10.length;i++){
+console.log("La suma de dados " + i + " se repitió " + array10[i] + " veces")
+}
 }
